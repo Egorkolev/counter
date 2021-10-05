@@ -1,9 +1,10 @@
-from collections import Counter
+inputVal = input('введите текст :').split()
+counts = dict()
 
-# Reading user input
-inputVal = input('введите текс :')
+for word in inputVal:
+    value = word.lower().strip()
+    counts[value] = counts.get(value, 0) + 1
 
-Counter = Counter(inputVal.split())
+common = max(counts, key=counts.get)
 
-print(Counter.most_common(1))
-
+print(common)
