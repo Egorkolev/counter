@@ -5,14 +5,5 @@ data = [
     [88112, 'Einfuhrung in Python3, Bernd Klein', 3, 24.99]
 ]
 
-
-def to_tuple(arr):
-    order_number = arr[0]
-    quantity = arr[2]
-    price = round(arr[3])
-
-    return order_number, quantity, price + 10 if price < 100 else price
-
-
-tuples = map(lambda x: to_tuple(x), data)
+tuples = map(lambda x: (x[0], x[2], round(x[3]) + 10 if round(x[3]) < 100 else round(x[3])), data)
 print(list(tuples))
